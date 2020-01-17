@@ -1,0 +1,68 @@
+<div class="row">
+  <div class="col-md-3">
+    <h2>Filters</h2>
+    <br />
+    <div>
+      <div class="card">
+        <div class="card-header">Species</div>
+        <div class="card-body">
+          <div *ngFor="let s of species" class="custom-control custom-checkbox">
+            <input
+              type="checkbox"
+              class="custom-control-input"
+              id="{{ s }}"
+              (change)="onSelect($event, s, 'species')"
+            />
+            <label class="custom-control-label" for="{{ s }}">{{ s }}</label>
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
+      <div class="card">
+        <div class="card-header">Gender</div>
+        <div class="card-body">
+          <div *ngFor="let g of gender" class="custom-control custom-checkbox">
+            <input
+              type="checkbox"
+              class="custom-control-input"
+              id="{{ g }}"
+              (change)="onSelect($event, g, 'gender')"
+            />
+            <label class="custom-control-label" for="{{ g }}">{{ g }}</label>
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
+      <div class="card">
+        <div class="card-header">Origin</div>
+        <div class="card-body">
+          <div *ngFor="let o of origin" class="custom-control custom-checkbox">
+            <input
+              type="checkbox"
+              class="custom-control-input"
+              id="{{ o }}"
+              (change)="onSelect($event, o, 'origin')"
+            />
+            <label class="custom-control-label" for="{{ o }}">{{ o }}</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-9">
+    <h2>Selected Filters</h2>
+    <br />
+    <div>
+      <button *ngFor="let filter of selectedFilters" class="selectedfilter">
+        <span class="close-icon" (click)="onDeselect(filter['value'])"
+          >&times;</span
+        >
+        {{ filter["value"] }}
+      </button>
+    </div>
+    <br /><br />
+    <app-characters></app-characters>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+<div>
+  <div class="float">
+    <div class="row">
+      <div class="col-md-6">
+        <h6>Search by Name</h6>
+        <form class="form-inline">
+          <div class="form-group mx-sm-3 mb-2">
+            <input
+              type="text"
+              class="form-control"
+              id="search"
+              placeholder="Search"
+              [(ngModel)]="searchString"
+              name="searchstr"
+            />
+          </div>
+          <button
+            class="btn btn-primary mb-2"
+            style="margin-right:15px"
+            (click)="onSearch()"
+          >
+            search
+          </button>
+          <button class="btn btn-danger mb-2" (click)="onReset()">
+            Reset
+          </button>
+        </form>
+      </div>
+      <div class="col-md-6">
+        <br />
+        <div class="dropdown float-none">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Sort by ID:
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#" (click)="onAscending()"
+              >Ascending</a
+            >
+            <a class="dropdown-item" href="#" (click)="onDescending()"
+              >Descending</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div></div>
+    <div class="d-inline-block" *ngFor="let character of filteredCharacters">
+      <app-character [character]="character"></app-character>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+/* You can add global styles to this file, and also import other style files */
+
+.selectedfilter {
+  background-color: #333;
+  color: #fff;
+  padding: 5px 15px;
+  margin-right: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+li {
+  list-style-type: none;
+  border-top: 1px;
+  border-color: gray;
+  border-style: solid;
+  display: flex;
+  width: 100%;
+}
+
+li .char-label {
+  width: 40%;
+  float: left;
+  font-size: 12px;
+  word-break: break-all;
+  display: block;
+}
+
+li .char-item {
+  font-size: 14px;
+  width: 60%;
+  float: right;
+  display: block;
+  word-break: break-all;
+  text-align: right;
+  word-wrap: break-word;
+}
+
+h6 {
+  white-space: nowrap;
+}
+
+.char-id {
+  font-size: 14px;
+}

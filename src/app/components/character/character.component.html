@@ -1,0 +1,35 @@
+<div class="card" style="width: 14rem;">
+  <img class="card-img-top" src="{{ character.image }}" alt="Card image cap" />
+  <div class="card-header">
+    <h6>{{ character.name }}</h6>
+    <span class="char-id">{{
+      "Id: " + character.id + " - " + showCreatedTime
+    }}</span>
+  </div>
+  <div class="card-body">
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">
+        <span class="char-label">Status</span>
+        <span class="char-item">{{ character.status }}</span>
+      </li>
+      <li class="list-group-item">
+        <span class=" char-label">Species</span>
+        <span class=" char-item">{{ character.species }}</span>
+      </li>
+      <li class="list-group-item">
+        <span class="float-left char-label">Gender</span>
+        <span class="float-right char-item">{{ character.gender }}</span>
+      </li>
+      <li class="list-group-item">
+        <span class="float-left char-label">Origin</span>
+        <span class="float-right char-item">{{ character.origin?.name }}</span>
+      </li>
+      <li class="list-group-item">
+        <span class="float-left char-label">Last Location</span>
+        <span class="float-right char-item">{{
+          character.location?.name
+        }}</span>
+      </li>
+    </ul>
+  </div>
+</div>
